@@ -2,39 +2,19 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-    paths-ignore:
-      - '.github/**'
-      - 'node_modules/**'
-  pull_request:
-    branches: [ main ]
-    paths-ignore:
-      - '.github/**'
-      - 'node_modules/**'
+    branches: [main]
 
-# Only build and deploy on pushes to main (not PRs)
+# Deploy automatically on push to main branch
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - name: Install dependencies
-        run: npm install --save
-      
-      - name: Build project
-        run: npm run build
-        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: .
           force_or_ignore: true
