@@ -1,0 +1,21 @@
+# Site Configuration for Be Brooklyn Equine (GitHub Pages)
+
+title: "Be™ Brooklyn Equine"
+
+# GitHub Pages base URL - matches site-name.txt in .github/PAGES/
+base_url: /be-brooklyn-equine
+
+# Theme configuration
+theme: jekyll-theme-cayman
+
+# Jekyll 4+ settings
+collections: []
+plugins:
+  - jekyll-paginate-v2
+
+permalink: pretty
+
+exclude:
+  - node_modules/
+  - .gitignore
+  - README.md
