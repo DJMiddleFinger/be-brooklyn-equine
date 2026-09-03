@@ -1,0 +1,27 @@
+{
+  "name": "be-brooklyn-equine",
+  "version": "1.0.0",
+  "description": "Be Brooklyn Equine website - A historic stable in Prospect Park, Brooklyn",
+  "scripts": {
+    "start": "npx http-server -p 8080 -c-1",
+    "build": "echo 'Website built successfully' && mkdir -p dist && cp index.html stables.jpg hero-ride.jpg dist/",
+    "deploy:ghpages": "npm run build && npx gh-pages -d dist"
+  },
+  "keywords": [
+    "equine",
+    "horse",
+    "brooklyn",
+    "riding",
+    "pony-rider"
+  ],
+  "author": "Be Brooklyn Equine",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.0",
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DJMiddleFinger/be-brooklyn-equine.git"
+  }
+}
