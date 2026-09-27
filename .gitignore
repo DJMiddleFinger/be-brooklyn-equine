@@ -44,3 +44,4 @@ coverage/
 .cache/
 .parcel-cache/
 parcel-cache/
+_site/

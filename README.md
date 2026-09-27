@@ -27,6 +27,10 @@ Your site is live at: **https://DJMiddleFinger.github.io/be-brooklyn-equine/**
 
 No credentials or API keys are exposed on the public site. All sensitive information (email, phone) uses `mailto:` and `tel:` protocols for secure linking.
 
+## Photos
+
+The page expects two photos in the repository root: `hero-ride.jpg` (hero background) and `stables.jpg` (About section). Until they're added, the hero shows the green overlay alone and the About panel shows a green placeholder. Add the files and push to `main`.
+
 ## Maintenance
 
 To update content, make changes in this repository and push to the main branch. GitHub Pages will automatically redeploy within a few minutes.

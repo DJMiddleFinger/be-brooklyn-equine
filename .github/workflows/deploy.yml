@@ -2,6 +2,7 @@ name: Deploy
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -12,9 +13,19 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Stage site files
+        run: |
+          mkdir -p _site
+          cp index.html 404.html _site/
+          shopt -s nullglob
+          for f in *.jpg *.jpeg *.png *.webp *.svg *.ico; do cp "$f" _site/; done
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -22,8 +33,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire project
-          path: '.'
+          path: '_site'
 
       - name: Deploy to GitHub Pages
         id: deploy
