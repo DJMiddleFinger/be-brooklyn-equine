@@ -29,7 +29,10 @@ No credentials or API keys are exposed on the public site. All sensitive informa
 
 ## Photos
 
-The page expects two photos in the repository root: `hero-ride.jpg` (hero background) and `stables.jpg` (About section). Until they're added, the hero shows the green overlay alone and the About panel shows a green placeholder. Add the files and push to `main`.
+- `hero-ride.jpg`: hero background (trail ride in Prospect Park)
+- `stables.jpg`: About section (pony ride with staff)
+
+Replace either file with a same-named JPEG and push to `main` to swap it.
 
 ## Maintenance
 
